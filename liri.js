@@ -1,44 +1,42 @@
 //»»»»»»»»»»»»»»»»»»»»»»REQUIRE ALL FILES, PACKAGES, AND DEPENDENCIES»»»»»»»»»»»»»»»»»»»»»»
 
-//.env file
 require("dotenv").config();
-
-//file system
-var fs = require("fs");
-
-//require axios
-var axios = require("axios");
-
-//require the keys file for all
+var request = require("request");
 var keys = require("./keys.js");
-
-//require bandsInTown
-var bandsintown = keys.bandsintown;
-//from slack 3/30 :: queryURL = "https://rest.bandsintown.com/artists/" + searchValue + "/events?app_id=codingbootcamp";
-
-//initializing spotify
-var Spotify = require(node.spotify.api);
+var fs = require("fs");
+var axios = require("axios");
+var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
+//require bandsInTown
+//var bandsintown = keys.bandsintown;
+//from slack 3/30 :: queryURL = "https://rest.bandsintown.com/artists/" + searchValue + "/events?app_id=codingbootcamp";
 //require omdb
-var omdb = keys.omdb;
-var ombdURL = "http://www.omdbapi.com/?t=" + userQuery + "&apikey=omdb" //notsure this will work
+//var omdb = keys.omdb;
+//var ombdURL = "http://www.omdbapi.com/?t=" + userQuery + "&apikey=omdb" //notsure this will work
 
 //»»»»»»»»»»»»»»»»»»»»»»DECLARE USER COMMAND INPUTS»»»»»»»»»»»»»»»»»»»»»»
 var searchType = process.argv[2];
 var searchValue = process.argv.slice(3).join(" ");
 
 //»»»»»»»»»»»»»»»»»»»»»»LOGIC FOR USER'S SEARCH TYPE»»»»»»»»»»»»»»»»»»»»»»
-
-switch (
-  searchType
   //case 'concert-this': concertThis(); break
-  //case 'spotify-this-song': spotifyThis(); break
   //case 'movie-this': movieThis(); break
   //case 'do-what-it-says': doThis(); break
   //default: console.log('I\'m sorry, I don\'t understand')
-) {
+switch (searchType) {
+  //case 'spotify-this-song': spotifyThis(); break
+    case 'spotify-this-song':
+    spotifyThis();
+    break;
+    default:
+    console.log('I\'m sorry, I don\'t understand');
+    break;
 }
+
+//»»»»»»»»»»»»»»»»»»»»»»TAKING USER SEARCH VALUES»»»»»»»»»»»»»»»»»»»»»»
+
+
 
 //»»»»»»»»»»»»»»»»»»»»»»RETURN FUNCTIONS»»»»»»»»»»»»»»»»»»»»»»
 
@@ -57,28 +55,27 @@ switch (
 }*/
 
 //spotify return (directly from spotify psuedo)
-
-/*function spotifyThis() {
     //If no song is provided then your program will default to "The Sign" by Ace of Base
+function spotifyThis() {
 
     if(!searchValue) {
         serachValue = "The Sign Ace of Base"
     };
-    spotify.search({ //dis from spotify
+
+    spotify.search({
         type: 'track', 
         query: searchValue,
-        limit: 20 //issues?
+        limit: 1 //issues?
     }, function(err, data) {
         if (err) {
-          return console.log('Error occurred: ' + err);
-        } else { //RETURN MUST INCLUDE VALUES
-            console.log(Artists) // probably a loop for each < limit.length
-            console.log(songTitle)
-            console.log(preview link)
-            console.log*(albumTitle)
+          console.log('Error occurred: ' + 'We cannot find what you are looking for');
         }
-      });
-*/
+        var spotifyResponse = data.tracks.items;
+        for (i = 0; i < spotifyResponse.length; i++) {
+            console.log('the response is ' + data.tracks.items[i].album.artists[0].name);
+        };
+    });
+}
 
 //omdb psueper psuedo
 
