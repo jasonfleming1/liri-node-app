@@ -30,7 +30,11 @@ switch (searchType) {
     spotifyThis();
     break;
     default:
+    console.log(`***********************************************`)
+    console.log("\r\n\r\n\r\n");
     console.log('I\'m sorry, I don\'t understand');
+    console.log("\r\n\r\n\r\n");
+    console.log(`***********************************************`)
     break;
 }
 
@@ -65,14 +69,14 @@ function spotifyThis() {
     spotify.search({
         type: 'track', 
         query: searchValue,
-        limit: 1 //issues?
-    }, function(err, data) {
-        if (err) {
-          console.log('Error occurred: ' + 'We cannot find what you are looking for');
+        limit: 2 //issues?
+    }, function (error, data) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
         }
-        var spotifyResponse = data.tracks.items;
-        for (i = 0; i < spotifyResponse.length; i++) {
-            console.log('the response is ' + data.tracks.items[i].album.artists[0].name);
+        let spotifyArr = data.tracks.items;
+        for (i = 0; i < spotifyArr.length; i++) {
+            console.log(`\nSuccess!...\n\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify link: ${data.tracks.items[i].external_urls.spotify}\n\n - - - - -`)
         };
     });
 }
