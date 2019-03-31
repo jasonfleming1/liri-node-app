@@ -74,7 +74,7 @@ function spotifyThis() {
         if (error) {
             return console.log('Error occurred: ' + error);
         }
-        let spotifyArr = data.tracks.items;
+        var spotifyArr = data.tracks.items;
         for (i = 0; i < spotifyArr.length; i++) {
             console.log(`\nSuccess!...\n\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify link: ${data.tracks.items[i].external_urls.spotify}\n\n - - - - -`)
         };
