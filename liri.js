@@ -1,5 +1,4 @@
-//»»»»»»»»»»»»»»»»»»»»»»REQUIRE ALL FILES, PACKAGES, AND DEPENDENCIES»»»»»»»»»»»»»»»»»»»»»»
-
+///////////////////////////////////REQUIRES ALL NPM DEPENDENCIES///////////////////////////////////
 require("dotenv").config();
 var request = require("request");
 var keys = require("./keys.js");
@@ -7,19 +6,20 @@ var fs = require("fs");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
+var omdb = require('omdb');
+//var omdb = new Omdb(keys.omdb);
+//var ombdURL = "http://www.omdbapi.com/?t=" + userQuery + (keys.omdb); //notsure this will work
 
 //require bandsInTown
 //var bandsintown = keys.bandsintown;
 //from slack 3/30 :: queryURL = "https://rest.bandsintown.com/artists/" + searchValue + "/events?app_id=codingbootcamp";
-//require omdb
-//var omdb = keys.omdb;
-//var ombdURL = "http://www.omdbapi.com/?t=" + userQuery + "&apikey=omdb" //notsure this will work
 
-//»»»»»»»»»»»»»»»»»»»»»»DECLARE USER COMMAND INPUTS»»»»»»»»»»»»»»»»»»»»»»
+
+///////////////////////////////////DECLAR USER COMMAND INPUTS///////////////////////////////////
 var searchType = process.argv[2];
 var searchValue = process.argv.slice(3).join(" ");
 
-//»»»»»»»»»»»»»»»»»»»»»»LOGIC FOR USER'S SEARCH TYPE»»»»»»»»»»»»»»»»»»»»»»
+///////////////////////////////////USER COMMAND INPUT EVALS///////////////////////////////////
   //case 'concert-this': concertThis(); break
   //case 'movie-this': movieThis(); break
   //case 'do-what-it-says': doThis(); break
@@ -28,6 +28,9 @@ switch (searchType) {
   //case 'spotify-this-song': spotifyThis(); break
     case 'spotify-this-song':
     spotifyThis();
+    break;
+    case 'movie-this':
+    movieThis();
     break;
     default:
     console.log(`***********************************************`)
@@ -38,12 +41,7 @@ switch (searchType) {
     break;
 }
 
-//»»»»»»»»»»»»»»»»»»»»»»TAKING USER SEARCH VALUES»»»»»»»»»»»»»»»»»»»»»»
-
-
-
-//»»»»»»»»»»»»»»»»»»»»»»RETURN FUNCTIONS»»»»»»»»»»»»»»»»»»»»»»
-
+///////////////////////////////////BANDS RETURN///////////////////////////////////
 //bands in town and moment super psuedo prep
 
 /*function concertThis() {
@@ -58,55 +56,45 @@ switch (searchType) {
     }
 }*/
 
-//spotify return (directly from spotify psuedo)
-    //If no song is provided then your program will default to "The Sign" by Ace of Base
+///////////////////////////////////SPOTIFY RETURN///////////////////////////////////
 function spotifyThis() {
 
     if(!searchValue) {
-        serachValue = "The Sign Ace of Base"
+        searchValue = "The Sign Ace of Base"
     };
 
     spotify.search({
         type: 'track', 
         query: searchValue,
-        limit: 2 //issues?
+        limit: 15
     }, function (error, data) {
         if (error) {
             return console.log('Error occurred: ' + error);
         }
-        let spotifyArr = data.tracks.items;
+        var spotifyArr = data.tracks.items;
         for (i = 0; i < spotifyArr.length; i++) {
-            console.log(`\nSuccess!...\n\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify link: ${data.tracks.items[i].external_urls.spotify}\n\n - - - - -`)
+            console.log(`\nSuccess!...\n\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify link: ${data.tracks.items[i].external_urls.spotify}\n\n ****************`)
         };
     });
 }
 
-//omdb psueper psuedo
-
-/*function movieThis(){
-
-    //If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+///////////////////////////////////MOVIE RETURN///////////////////////////////////
+function movieThis(){
 
     if(!searchValue) {
-        serachValue = "Mr. Nobody"
+        searchValue = "Mr. Nobody"
+        console.log('If you haven\'t watched "Mr. Nobody, " then you should: <http://www.imdb.com/title/tt0485947/>.....it\s on Netflix')
     };
-
-    axios.get(ombdURL).then //notsure i can do this
-        (function(response) {
-            Title: console.log("The movie's rating is: " + response.data.title);
-            Year: console.log("The movie's rating is: " + response.data.year);
-            IMDB Rating: console.log("The movie's rating is: " + response.data.imdbRating);
-            RottenToms: console.log("The movie's rating is: " + response.data.rottenRating);
-            Produced Country: console.log("The movie's rating is: " + response.data.country);
-            Language: console.log("The movie's rating is: " + response.data.language);
-            Plot: console.log(response.data.plot);
-            Actors: console.log(response.data.actors);
+    axios.get("https://www.omdbapi.com/?t=" + searchValue + "&y=&plot=short&apikey=trilogy")
+    .then(function(response) {
+        console.log(`\n\n****************\nSuccess!...\n\nMovie Title: ${response.data.Title} \nYear of Release: ${response.data.Year} \nIMDB Rating: ${response.data.imdbRating} \nRotten Tomatoes Rating: ${response.data.Ratings[1].Value} ${response.data.Year} \nCountry Produced: ${response.data.Country} \nLanguage: ${response.data.Language} \nPlot: ${response.data.Plot} \nActors/Actresses: ${response.data.Actors} \n\n*****************`)
+    })
+    .catch(function (error) {
+        console.log(error);
     });
 };
-*/
 
-//doThis from read.js 01 activites, 12 - ReadFile
-
+///////////////////////////////////DO THIS FROM 01_ACTIVITIES_12_READFILES///////////////////////////////////
 /*function doThis() {
     //fs.readFile("random.txt", "utf8", function(err, data){
         if(err) {
