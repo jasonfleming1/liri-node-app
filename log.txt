@@ -1,0 +1,87 @@
+********************************
+
+Success! Here is the Artist's next concert information...
+
+Your Artist: Tool 
+Lineup: Tool 
+Venue: Legacy Arena at The BJCC 
+Venue Location: Birmingham, AL United States 
+Your event's Date and Time is: 05/05/2019 12:00 AM
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Ween 
+Song: Piss up a Rope
+Album: 12 Golden Country Greats
+Spotify link: https://open.spotify.com/track/0YHhpW8PnU0WNuAKAVuM70
+
+********************************
+
+
+********************************
+
+Success! Here is your movie information...
+
+Movie Title: Strange Brew 
+Year of Release: 1983 
+IMDB Rating: 6.8 
+Rotten Tomatoes Rating: 6.8/10 
+Country Produced: Canada, USA 
+Language(s): English 
+Plot: Canada's most famous hosers, Bob and Doug McKenzie, get jobs at the Elsinore Brewery, only to learn that something is rotten with the state of it. 
+Actor(s)/Actress(es): Dave Thomas, Rick Moranis, Max von Sydow, Paul Dooley
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Harry Styles 
+Song: Sign of the Times
+Album: Harry Styles
+Spotify link: https://open.spotify.com/track/5Ohxk2dO5COHF1krpoPigN
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Karaoke Box 
+Song: I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
+Album: Karaoke Box: Reggae Greatest Hits
+Spotify link: https://open.spotify.com/track/0jQYAjEb8atbTeLcnuGJTR
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Karaoke Box 
+Song: I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
+Album: Karaoke Box: Reggae Greatest Hits
+Spotify link: https://open.spotify.com/track/0jQYAjEb8atbTeLcnuGJTR
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Backstreet Boys 
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Spotify link: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+
+********************************
