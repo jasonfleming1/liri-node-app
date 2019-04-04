@@ -1,4 +1,4 @@
-# Liri Bot
+# Liri Node App
 ---
 - **Developer:** Jason Fleming
 - **Deployment Date** April 3, 2019
