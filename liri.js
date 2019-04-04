@@ -94,7 +94,7 @@ function concertThis() {
 function spotifyThis() {
 
     if(!searchValue) {
-        searchValue = "The Sign by Ace of Base"
+        searchValue = "the sign ace of base"
     };
 
     spotify.search({
@@ -106,6 +106,7 @@ function spotifyThis() {
             return console.log('Error occurred: ' + error);
         }
         var spotifyArr = data.tracks.items;
+        //console.log(spotifyArr);
         for (i = 0; i < spotifyArr.length; i++) {
             console.log(`\n\n********************************\n\nSuccess! Here is the song information from Spotify...\n\nArtist: ${data.tracks.items[i].album.artists[0].name} \nSong: ${data.tracks.items[i].name}\nAlbum: ${data.tracks.items[i].album.name}\nSpotify link: ${data.tracks.items[i].external_urls.spotify}\n\n********************************\n`)
         };

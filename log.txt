@@ -85,3 +85,81 @@ Album: The Hits--Chapter One
 Spotify link: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
 
 ********************************
+********************************
+
+Success! Here is the Artist's next concert information...
+
+Your Artist: Tool 
+Lineup: Tool 
+Venue: Legacy Arena at The BJCC 
+Venue Location: Birmingham, AL United States 
+Your event's Date and Time is: 05/05/2019 12:00 AM
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Ween 
+Song: Piss up a Rope
+Album: 12 Golden Country Greats
+Spotify link: https://open.spotify.com/track/0YHhpW8PnU0WNuAKAVuM70
+
+********************************
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Ace of Base 
+Song: The Sign
+Album: The Sign (US Album) [Remastered]
+Spotify link: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+
+********************************
+
+
+********************************
+
+Success! Here is your movie information...
+
+Movie Title: UHF 
+Year of Release: 1989 
+IMDB Rating: 7.0 
+Rotten Tomatoes Rating: 7.0/10 
+Country Produced: USA 
+Language(s): English 
+Plot: An unemployed visionary becomes the manager of a local public station. The station becomes a success, with all sorts of hilarious sight gags and wacky humor. 
+Actor(s)/Actress(es): 'Weird Al' Yankovic, Victoria Jackson, Kevin McCarthy, Michael Richards
+
+********************************
+
+
+********************************
+
+Success! Here is your movie information...
+
+Movie Title: Mr. Nobody 
+Year of Release: 2009 
+IMDB Rating: 7.8 
+Rotten Tomatoes Rating: 7.8/10 
+Country Produced: Belgium, Germany, Canada, France, USA, UK 
+Language(s): English, Mohawk 
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible. 
+Actor(s)/Actress(es): Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+********************************
+
+
+********************************
+
+Success! Here is the song information from Spotify...
+
+Artist: Backstreet Boys 
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Spotify link: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+
+********************************
