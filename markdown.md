@@ -24,22 +24,21 @@ do-this | uses the built in **readFile()** method to access data from a prepopul
 
 ### Functionality
 --- 
-
 1. searchLiri
 
     *<searchType, searchValue>*
 
     Function is a switch statement to identify the searchType the user is trying to perform. Each case calls a specific function that takes in the searchValue and performs the API query.
-
+--- 
 2. concert-this 
 
     *<searchValue, artist name>*
 
     Function takes the search type value (searchType) and search's on (artist), and returns the next concert time and date for that artist, as well as location and city.
 
-    ![image of concertThis](/assets/concertThis_success.png)
+    ![image of concert-his](/assets/concertThis_success.png)
     ![image of concert-this](/assets/concertThis_notTouring.png)
-
+--- 
 3. spotify-this
 
      *<searchValue, song name>*
@@ -47,17 +46,16 @@ do-this | uses the built in **readFile()** method to access data from a prepopul
     Function takes the search type value (searchType) and search's on (song), and returns the artist, full track name, a preview link and the album.
 
     ![image of spotify-this](/assets/spotifyThisSong_success.png)
-    ![image of spotify-this](/assets/spotifyThisSong_nullSong.png)
-
-
+    ![image of spotify-this2](/assets/spotifyThisSong_nullSong.png)
+--- 
 4. movie-this
   *<searchValue, movie name>*
 
     Function takes the search type value (command) and search's on (movie title), and returns title, cast, release date, ratings, country of origin, original language and synopsis.
     ![image of movie-this](/assets/movieThis_Success.png)
-    ![image of movie-this](/assets/movieThis_nullMovie.png)
-    ![image of movie-this](/assets/movieThis_catchError.png)
-
+    ![image of movie-this2](/assets/movieThis_nullMovie.png)
+    ![image of movie-this3](/assets/movieThis_catchError.png)
+--- 
 5. do-this
 
       *<searchValue>*
